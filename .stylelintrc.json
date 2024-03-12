@@ -1,0 +1,8 @@
+{
+  "overrides": [
+    {
+      "files": ["*.scss", "**/*.scss"],
+      "extends": "stylelint-config-standard-scss"
+    }
+  ]
+}

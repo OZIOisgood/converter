@@ -1,0 +1,87 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/strict-type-checked",
+        "plugin:@typescript-eslint/stylistic-type-checked",
+        "plugin:@angular-eslint/all",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        // eslint
+        "block-spacing": "off",
+        "brace-style": "off",
+        "comma-dangle": "off",
+        "comma-spacing": "off",
+        "func-call-spacing": "off",
+        "indent": "off",
+        "key-spacing": "off",
+        "no-constant-condition": ["error", { "checkLoops": false }],
+        "no-shadow": "off",
+        "no-use-before-define": "off",
+        "no-useless-constructor": "off",
+        "object-curly-spacing": "off",
+        "quotes": "off",
+        "semi": "off",
+
+        // angular
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": ["app", "epui"],
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": ["app", "epui"],
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/prefer-standalone-component": "off",
+        "@angular-eslint/sort-ngmodule-metadata-arrays": "off",
+
+        // typescript-eslint
+        "@typescript-eslint/block-spacing": "error",
+        "@typescript-eslint/brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+        "@typescript-eslint/comma-dangle": "error",
+        "@typescript-eslint/comma-spacing": "error",
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "@typescript-eslint/explicit-member-accessibility": "error",
+        "@typescript-eslint/explicit-module-boundary-types": "error",
+        "@typescript-eslint/func-call-spacing": "error",
+        "@typescript-eslint/indent": ["error", 2],
+        "@typescript-eslint/key-spacing": "error",
+        "@typescript-eslint/member-delimiter-style": "error",
+        "@typescript-eslint/method-signature-style": "error",
+        "@typescript-eslint/no-extraneous-class": ["error", { "allowWithDecorator": true }],
+        "@typescript-eslint/no-inferrable-types": "off",
+        "@typescript-eslint/no-shadow": "error",
+        "@typescript-eslint/no-unnecessary-condition": ["error", { "allowConstantLoopConditions": true }],
+        "@typescript-eslint/no-unnecessary-qualifier": "error",
+        "@typescript-eslint/no-use-before-define": "error",
+        "@typescript-eslint/no-useless-constructor": "error",
+        "@typescript-eslint/object-curly-spacing": ["error", "always"],
+        "@typescript-eslint/parameter-properties": ["error", { "prefer": "parameter-property" }],
+        "@typescript-eslint/prefer-readonly": "error",
+        "@typescript-eslint/quotes": ["error", "single", { "avoidEscape": true }],
+        "@typescript-eslint/semi": "error"
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended", "plugin:@angular-eslint/template/accessibility"],
+      "rules": {}
+    }
+  ]
+}

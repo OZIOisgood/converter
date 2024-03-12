@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../out-tsc/worker",
+    "types": ["dom-webcodecs"],
+    "lib": ["es2022", "webworker"],
+    "typeRoots": ["./types", "../../node_modules/@types"]
+  },
+  "include": ["./*.worker.ts"]
+}

@@ -1,0 +1,47 @@
+// Tailwind CSS
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+// Material icons
+@import '@fontsource/material-icons';
+@import '@fontsource/material-icons-outlined';
+
+// Material icons
+%material-icons {
+  font-family: 'Material Icons', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: middle;
+}
+
+.material-icons {
+  @extend %material-icons;
+}
+
+%material-icons-outlined {
+  @extend %material-icons;
+
+  font-family: 'Material Icons Outlined', sans-serif;
+}
+
+.material-icons-outlined {
+  @extend %material-icons-outlined;
+}
+
+// General styles
+body {
+  background-color: theme('backgroundColor.primary');
+}
+
+// No select class for elements that should not be selectable
+.no-select {
+  user-select: none;
+}

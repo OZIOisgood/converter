@@ -1,0 +1,21 @@
+<div
+  [ngClass]="
+    'flex justify-center flex-col text-center border-2 rounded-primary border-solid border-grayScale-600 bg-secondary h-full hover:border-grayScale-900 hover:bg-gray-200 hover:border-3' +
+    (isDraggedOver ? ' border-3 border-dashed border-grayScale-900 bg-grayScale-200' : '')
+  "
+  (click)="fileInput.click()"
+  (keydown.enter)="fileInput.click()"
+  tabindex="0"
+  role="button"
+  (dragover)="onDragOver($event)"
+  (dragleave)="onDragLeave($event)"
+  (drop)="onDrag($event)"
+>
+  <epui-typography size="2xl">
+    Click to upload
+    <span class="material-icons mb-1">file_upload</span>
+  </epui-typography>
+
+  <epui-typography size="lg">or, drag and drop a file here</epui-typography>
+</div>
+<input type="file" [accept]="accept" (change)="onFileSelected($event)" #fileInput hidden />

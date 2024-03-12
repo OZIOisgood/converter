@@ -1,0 +1,31 @@
+<epui-container>
+  <div class="flex flex-col">
+    <epui-typography size="3xl" [isBold]="true">Web Codecs API v{{ version }}</epui-typography>
+    <epui-typography size="base" className="text-placeholder">(No code optimization)</epui-typography>
+  </div>
+
+  <div class="mt-4">
+    <!-- File selection card -->
+    <div *ngIf="stage === 'select-file'" class="h-80">
+      <epui-file-select-card (fileSelected)="onFileSelected($event)"></epui-file-select-card>
+    </div>
+
+    <div *ngIf="stage === 'converting'" class="h-80">
+      <epui-progress-card [value]="progress"></epui-progress-card>
+    </div>
+
+    <div *ngIf="stage === 'converted'">
+      <video class="rounded-lg bg-black default:h-[116px] sm:h-[244px] w-full" controls>
+        <source [src]="safeUrl" type="video/mp4" />
+      </video>
+
+      <div class="w-full flex justify-end mt-4">
+        <epui-button color="accent" [rounded]="true" (click)="onSaveFileClicked()">
+          <span class="material-icons-outlined"> file_download </span> Save file
+        </epui-button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mylog" class="border-2 border-primary p-4"></div>
+</epui-container>

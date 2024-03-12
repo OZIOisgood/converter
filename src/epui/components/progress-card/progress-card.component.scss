@@ -1,0 +1,12 @@
+.progress-card {
+  &__progress-bar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, #fff 0 75%, transparent 80% 100%), conic-gradient(#000 var(--progress-card-value), #fff 0);
+  }
+}
